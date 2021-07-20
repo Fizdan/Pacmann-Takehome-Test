@@ -1,0 +1,20 @@
+certifi==2021.5.30
+cycler==0.10.0
+kiwisolver==1.2.0
+matplotlib @ file:///C:/ci/matplotlib-base_1597858295275/work
+mkl-fft==1.3.0
+mkl-random==1.0.4
+mkl-service==2.3.0
+numpy @ file:///C:/ci/numpy_and_numpy_base_1603480701039/work
+olefile==0.46
+pandas @ file:///C:/ci/pandas_1608056614942/work
+Pillow @ file:///C:/ci/pillow_1602785322033/work
+pyparsing==2.4.7
+python-dateutil @ file:///tmp/build/80754af9/python-dateutil_1626374649649/work
+pytz @ file:///tmp/build/80754af9/pytz_1612215392582/work
+scipy @ file:///C:/ci/scipy_1597675683670/work
+seaborn @ file:///tmp/build/80754af9/seaborn_1600553570093/work
+sip==4.19.24
+six @ file:///tmp/build/80754af9/six_1623709665295/work
+tornado==6.0.4
+wincertstore==0.2
