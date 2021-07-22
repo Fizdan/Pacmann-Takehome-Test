@@ -41,7 +41,7 @@ Parameter that the module used
 | Params      | Type   | Description                                                                 |
 |-------------|--------|-----------------------------------------------------------------------------|
 | n_neigbours | int    | Number of neigbours used i.e (1,5,20)                                       |
-| methods     | string | Methods used in distance metrics in {"Euclidean", "Manhattan", "Minkowski"} |
+| methods     | string | Methods used in distance metrics in {"Euclidean", "Manhattan"} |
 
 ### Methods
 ------------
