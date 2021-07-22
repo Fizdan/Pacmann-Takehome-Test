@@ -25,7 +25,7 @@ class KnnRegression() :
 
         Inputs      : learning_rate : list or array contains int or float 
                       epochs : list or array contains int or float 
-                      metrics : string - {'Euclidean', 'Manhattan', 'Minkowski'} 
+                      metrics : string - {'Euclidean', 'Manhattan'} 
 
         Output      : N/A pass along to predict()
         """
@@ -106,15 +106,9 @@ class KnnRegression() :
                 
                 distancesList[i] = distance
 
-            elif self.metrics == 'Minkowski':
-
-                distance = self.__minkowski( x, self.train_data[i] )
-                
-                distancesList[i] = distance
-
             else :
 
-                raise ValueError("Invalid Distance metrics for KNN Regression") 
+                raise ValueError("Invalid Distance metrics for KNN Regression Module") 
 
         # Sort the distances and get label by neighbour count
 
@@ -128,7 +122,7 @@ class KnnRegression() :
     def __euclidean( self, x, x_train ) :
 
         """
-        Returns euclidian distance of values between x and x_train
+        Returns euclidian distance of values between x and x_train, used Minkowski Distance for generalization
 
         Inputs      : X : list or array contains int or float
 
@@ -136,14 +130,14 @@ class KnnRegression() :
 
         Reference   : https://en.wikipedia.org/wiki/Euclidean_distance
         """  
-          
-        return np.sqrt( np.sum( np.square( x - x_train ) ) )
+
+        return np.sum(np.abs(x - x_train)**2)**(1/2)
 
               
     def __manhattan( self, x, x_train ) :
 
         """
-        Returns manhattan distance of values between x and x_train
+        Returns manhattan distance of values between x and x_train, used Minkowski Distance for generalization
 
         Inputs      : X : list or array contains int or float
 
@@ -151,21 +145,6 @@ class KnnRegression() :
 
         Reference   : http://www.improvedoutcomes.com/docs/WebSiteDocs/Clustering/Clustering_Parameters/Manhattan_Distance_Metric.html
         """  
-          
-        return np.sum(np.abs(x-x_train))
 
-              
-    def __minkowski( self, x, x_train ) :
-
-        """
-        Returns minkowski distance of values between x and x_train
-
-        Inputs      : X : list or array contains int or float
-
-        Output      : list or array contains float
-
-        Reference   : https://rittikghosh.com/Minkowski_distance.html
-        """  
-          
-        return np.sum(np.abs(x - x_train)**len(x))**(1/len(x))
+        return np.sum(np.abs(x - x_train)**1)**(1/1)
     
